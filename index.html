@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Archive</title>
+  <title>Misterioso</title>
   <style>
     html, body {
       margin: 0;
@@ -99,12 +99,25 @@
       z-index: 3;
       border-radius: 8px;
     }
+
+    .corner-code {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 2px;
+      z-index: 2;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
   <div class="glitch-text" data-text="- .... . / -... . ... - / .. ... / -.-- . - / - --- / -.-. --- -- .">
     - .... . / -... . ... - / .. ... / -.-- . - / - --- / -.-. --- -- .
   </div>
+
+  <div class="corner-code">0613</div>
   <div class="static-overlay"></div>
 
   <button id="start-btn">Iniciar</button>
