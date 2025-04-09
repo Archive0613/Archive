@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       background-color: #1a001a;
-      color: #ffffff;
+      color: white;
       font-family: monospace;
       height: 100vh;
       overflow: hidden;
@@ -20,11 +20,40 @@
 
     h1 {
       font-size: 2rem;
-      text-align: center;
+      position: relative;
       z-index: 2;
+      animation: glitchText 2s infinite;
     }
 
-    .glitch {
+    /* Glitch animation on text */
+    @keyframes glitchText {
+      0% {
+        text-shadow: 2px 0 red, -2px 0 blue;
+        transform: translate(0, 0);
+      }
+      20% {
+        text-shadow: -2px -1px red, 2px 1px blue;
+        transform: translate(-1px, 1px);
+      }
+      40% {
+        text-shadow: 2px 1px red, -1px -1px blue;
+        transform: translate(1px, -1px);
+      }
+      60% {
+        text-shadow: -2px 1px red, 1px -1px blue;
+        transform: translate(-1px, -1px);
+      }
+      80% {
+        text-shadow: 1px 0 red, -1px 0 blue;
+        transform: translate(1px, 1px);
+      }
+      100% {
+        text-shadow: 2px 0 red, -2px 0 blue;
+        transform: translate(0, 0);
+      }
+    }
+
+    .glitch-overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -43,9 +72,9 @@
     }
 
     @keyframes flicker {
-      0% { opacity: 0.1; transform: translateY(0); }
-      50% { opacity: 0.3; transform: translateY(-1px); }
-      100% { opacity: 0.1; transform: translateY(1px); }
+      0% { opacity: 0.05; transform: translateY(0); }
+      50% { opacity: 0.15; transform: translateY(-1px); }
+      100% { opacity: 0.05; transform: translateY(1px); }
     }
 
     audio {
@@ -55,10 +84,10 @@
 </head>
 <body>
   <h1>- .... . / -... . ... - / .. ... / -.-- . - / - --- / -.-. --- -- .</h1>
-  <div class="glitch"></div>
+  <div class="glitch-overlay"></div>
   <audio autoplay loop>
     <source src="https://cdn.pixabay.com/download/audio/2021/09/04/audio_f195aa31d1.mp3?filename=radio-interference-6407.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
 </body>
 </html>
+
