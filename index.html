@@ -87,19 +87,6 @@
       100% { opacity: 0.05; }
     }
 
-    #start-btn {
-      position: absolute;
-      bottom: 40px;
-      padding: 10px 20px;
-      background: #440044;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      z-index: 3;
-      border-radius: 8px;
-    }
-
     .corner-code {
       position: absolute;
       bottom: 10px;
@@ -120,20 +107,8 @@
   <div class="corner-code">0613</div>
   <div class="static-overlay"></div>
 
-  <button id="start-btn">Iniciar</button>
-
-  <audio id="bg-audio" loop>
+  <audio autoplay loop>
     <source src="https://cdn.pixabay.com/download/audio/2021/09/04/audio_f195aa31d1.mp3?filename=radio-interference-6407.mp3" type="audio/mpeg">
   </audio>
-
-  <script>
-    const startBtn = document.getElementById('start-btn');
-    const audio = document.getElementById('bg-audio');
-
-    startBtn.addEventListener('click', () => {
-      audio.play();
-      startBtn.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
